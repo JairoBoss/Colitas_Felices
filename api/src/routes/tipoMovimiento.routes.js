@@ -1,5 +1,5 @@
 module.exports = (app) => {
-    const TipoMovimientoController = require("../controllers/TipoMovimiento.controller.js");
+    const TipoMovimientoController = require("../controllers/tipoMovimiento.controller.js");
     var router = require("express").Router();
   
     router.post("/", TipoMovimientoController.create);
