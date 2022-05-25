@@ -13,7 +13,7 @@ const ArticuloSchema = new Schema({
   linksImagenes: [{
     type: String
   }],
-  Categoria: {
+  categoria: {
     type: Schema.Types.ObjectId,
     required: true,
     ref: 'Categoria'

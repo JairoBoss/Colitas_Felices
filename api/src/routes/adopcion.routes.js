@@ -4,5 +4,13 @@ module.exports = (app) => {
 
   router.post("/", AdopcionController.create);
 
+  router.get("/", AdopcionController.findAll);
+
+  router.get("/:id", AdopcionController.findOne);
+
+  router.put("/:id", AdopcionController.update);
+
+  router.delete("/:id", AdopcionController.delete);
+
   app.use("/api/adopcion", router);
 };

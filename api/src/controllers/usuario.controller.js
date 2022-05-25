@@ -17,7 +17,7 @@ exports.create = async (req, res) => {
   const usuarioNuevo = new Usuario({
     correo: req.body.correo,
     contraseña: hasPassword,
-    Persona: req.body.Persona,
+    persona: req.body.persona,
   });
 
   usuarioNuevo.save((err, usuarioNuevo) => {
@@ -42,7 +42,7 @@ exports.create = async (req, res) => {
 
 exports.login = async (req, res) => {
   Usuario.findOne({ correo: req.body.correo })
-    .populate("Persona")
+    .populate("persona")
     .exec((err, user) => {
       if (err) {
         res.status(500).send({

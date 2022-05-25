@@ -1,35 +1,43 @@
-const Adopcion = require("../models/adopcion.model");
+const Movimiento = require("../models/movimiento.model");
 
 exports.create = (req, res) => {
-  const adopcionNueva = new Adopcion({
-    fechaAdopcion: req.body.fechaAdopcion,
-    status: req.body.status,
-    mascota: req.body.mascota,
+  if (!req.body.descripcion) {
+    res.status(400).send({
+      message: "El movimiento debe de contener una descripcion",
+    });
+  }
+  const movimientoNuevo = new Movimiento({
+    descripcion: req.body.descripcion,
+    fecha: req.body.fecha,
+    monto: req.body.monto,
+    tipoMovimiento: req.body.tipoMovimiento,
     persona: req.body.persona,
+    pago: req.body.pago,
   });
 
-  adopcionNueva.save((err, adopcionNueva) => {
+  movimientoNuevo.save((err, movimientoNuevo) => {
     if (err) {
       console.log(err);
       res.status(500).send({
         message:
           err.message ||
-          `Ocurrio un error al tratar de crear la nueva adopcion`,
+          `Ocurrio un error al tratar de crear el nuevo movimeinto, ${movimientoNuevo.descripcion}`,
       });
     } else {
-      Adopcion.findById(adopcionNueva._id)
-        .populate("mascota")
+      Movimiento.findById(movimientoNuevo._id)
+        .populate("tipoMovimiento")
         .populate("persona")
-        .exec((err, adopcionNueva) => {
+        .populate("pago")
+        .exec((err, data) => {
           if (err) {
             console.log(err);
             res.status(500).send({
               message:
                 err.message ||
-                `Ocurrio un error al tratar de crear la nueva adopcion`,
+                `Ocurrio un error al tratar de regresar el movimiento `,
             });
           } else {
-            res.status(200).send(adopcionNueva);
+            res.status(200).send(data);
           }
         });
     }
@@ -37,16 +45,17 @@ exports.create = (req, res) => {
 };
 
 exports.findOne = (req, res) => {
-  Adopcion.findById(req.params.id)
-    .populate("mascota")
+  Movimiento.findById(req.params.id)
+    .populate("tipoMovimiento")
     .populate("persona")
+    .populate("pago")
     .exec((err, data) => {
       if (err) {
         console.log(err);
         res.status(500).send({
           message:
             err.message ||
-            `Ocurrio un error al tratar de recuperar la adopcion`,
+            `Ocurrio un error al tratar de recuperar el movimiento`,
         });
       } else {
         res.status(200).send(data);
@@ -55,16 +64,17 @@ exports.findOne = (req, res) => {
 };
 
 exports.findAll = (req, res) => {
-  Adopcion.find()
-    .populate("mascota")
+  Movimiento.find()
+    .populate("tipoMovimiento")
     .populate("persona")
+    .populate("pago")
     .exec((err, data) => {
       if (err) {
         console.log(err);
         res.status(500).send({
           message:
             err.message ||
-            `Ocurrio un error al tratar de recuperar la adopcion`,
+            `Ocurrio un error al tratar de recuperar todos los movimientos`,
         });
       } else {
         res.status(200).send(data);
@@ -73,16 +83,17 @@ exports.findAll = (req, res) => {
 };
 
 exports.update = (req, res) => {
-  Adopcion.findByIdAndUpdate(req.params.id, req.body)
-    .populate("mascota")
+  Movimiento.findByIdAndUpdate(req.params.id, req.body)
+    .populate("tipoMovimiento")
     .populate("persona")
+    .populate("pago")
     .exec((err, data) => {
       if (err) {
         console.log(err);
         res.status(500).send({
           message:
             err.message ||
-            `Ocurrio un error al tratar de actualizar la adopcion`,
+            `Ocurrio un error al tratar de actualizar el movimiento`,
         });
       } else {
         res.status(200).send(data);
@@ -91,36 +102,23 @@ exports.update = (req, res) => {
 };
 
 exports.delete = (req, res) => {
-  Adopcion.findByIdAndRemove(req.params.id)
+  Movimiento.findByIdAndRemove(req.params.id)
     .then((data) => {
       if (!data) {
         return res.status(404).send({
-          message: `Adopcion con id: ${req.params.id}, no encontrada`,
+          message: `Movimiento con id: ${req.params.id}, no encontrado`,
         });
       }
-      res.send({ message: "Adopcion eliminada con exito!" });
+      res.send({ message: "Movimiento eliminada con exito!" });
     })
     .catch((err) => {
       if (err.kind === "ObjectId" || err.name === "NotFound") {
         return res.status(404).send({
-          message: `Adopcion con id: ${req.params.id}, no encontrada`,
+          message: `Movimiento con id: ${req.params.id}, no encontrado`,
         });
       }
       return res.status(500).send({
-        message: `Ocurrio un error al eliminar la adopcion con id: ${req.params.id}.`,
+        message: `Ocurrio un error el movimiento la adopcion con id: ${req.params.id}.`,
       });
     });
 };
-
-// adopcionNueva.save((err, adopcionNueva) => {
-//     if (err) {
-//       console.log(err);
-//       res.status(500).send({
-//         message:
-//           err.message ||
-//           `Ocurrio un error al tratar de crear a ${personaNueva.nombres}`,
-//       });
-//     } else {
-//       res.status(200).send(personaNueva);
-//     }
-//   });
