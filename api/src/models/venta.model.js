@@ -1,15 +1,15 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var VentaSchema = new Schema({
-  Articulos: [{
+  articulos: [{
     type: Schema.Types.ObjectId,
     required: true,
-    ref: 'Articulos'
+    ref: 'Articulo'
   }],
-  Movimientos: {
+  movimiento: {
     type: Schema.Types.ObjectId,
     required: true,
-    ref: 'Movimientos'
+    ref: 'Movimiento'
   }
 });
 

@@ -1,30 +1,30 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const MovimientoSchema = new Schema({
   descripcion: {
-    type: String
+    type: String,
   },
   fecha: {
-    type: Date
+    type: Date,
   },
   monto: {
-    type: String
+    type: String,
   },
-  TipoMovimiento: {
+  tipoMovimiento: {
     type: Schema.Types.ObjectId,
     required: true,
-    ref: 'TipoMovimiento'
+    ref: "TipoMovimiento",
   },
-  Personas: {
+  persona: {
     type: Schema.Types.ObjectId,
     required: true,
-    ref: 'Persona'
+    ref: "Persona",
   },
-  Pagos: {
+  pago: {
     type: Schema.Types.ObjectId,
     required: true,
-    ref: 'Pago'
-  }
+    ref: "Pago",
+  },
 });
 
 module.exports = mongoose.model("Movimiento", MovimientoSchema);
