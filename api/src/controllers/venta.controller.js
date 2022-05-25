@@ -19,9 +19,9 @@ exports.create = (req, res) => {
           err.message || `Ocurrio un error al tratar de crear la nueva venta`,
       });
     } else {
-      Movimiento.findById(ventaNueva._id)
-        .populate("Articulo")
-        .populate("Movimiento")
+      Venta.findById(ventaNueva._id)
+        .populate("articulos")
+        .populate("movimiento")        
         .exec((err, data) => {
           if (err) {
             console.log(err);
@@ -40,8 +40,8 @@ exports.create = (req, res) => {
 
 exports.findOne = (req, res) => {
   Venta.findById(req.params.id)
-    .populate("Articulo")
-    .populate("Movimiento")
+    .populate("articulos")
+    .populate("movimiento")
     .exec((err, data) => {
       if (err) {
         console.log(err);
@@ -58,8 +58,8 @@ exports.findOne = (req, res) => {
 
 exports.findAll = (req, res) => {
   Venta.find()
-    .populate("Articulo")
-    .populate("Movimiento")
+    .populate("articulos")
+    .populate("movimiento")
     .exec((err, data) => {
       if (err) {
         console.log(err);
@@ -76,8 +76,8 @@ exports.findAll = (req, res) => {
 
 exports.update = (req, res) => {
   Venta.findByIdAndUpdate(req.params.id, req.body)
-    .populate("Articulo")
-    .populate("Movimiento")
+    .populate("articulos")
+    .populate("movimiento")
     .exec((err, data) => {
       if (err) {
         console.log(err);

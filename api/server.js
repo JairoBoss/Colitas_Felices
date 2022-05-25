@@ -55,6 +55,11 @@ require("./src/routes/adopcion.routes.js")(app);
 require("./src/routes/categoria.routes.js")(app);
 require("./src/routes/articulo.routes.js")(app);
 require("./src/routes/institucion.routes.js")(app);
+require("./src/routes/movimiento.routes.js")(app);
+require("./src/routes/noticia.routes.js")(app);
+require("./src/routes/pago.routes.js")(app);
+require("./src/routes/tipoMovimiento.routes.js")(app);
+require("./src/routes/venta.routes.js")(app);
 
 app.listen(PORT, () => {
   console.log(`Server en el puerto ${PORT}`);

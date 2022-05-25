@@ -25,9 +25,9 @@ exports.create = (req, res) => {
       });
     } else {
       Movimiento.findById(movimientoNuevo._id)
-        .populate("TipoMovimiento")
-        .populate("Persona")
-        .populate("Pago")
+        .populate("tipoMovimiento")
+        .populate("persona")
+        .populate("pago")
         .exec((err, data) => {
           if (err) {
             console.log(err);
@@ -46,9 +46,9 @@ exports.create = (req, res) => {
 
 exports.findOne = (req, res) => {
   Movimiento.findById(req.params.id)
-    .populate("TipoMovimiento")
-    .populate("Persona")
-    .populate("Pago")
+    .populate("tipoMovimiento")
+    .populate("persona")
+    .populate("pago")
     .exec((err, data) => {
       if (err) {
         console.log(err);
@@ -65,9 +65,9 @@ exports.findOne = (req, res) => {
 
 exports.findAll = (req, res) => {
   Movimiento.find()
-    .populate("TipoMovimiento")
-    .populate("Persona")
-    .populate("Pago")
+    .populate("tipoMovimiento")
+    .populate("persona")
+    .populate("pago")
     .exec((err, data) => {
       if (err) {
         console.log(err);
@@ -84,9 +84,9 @@ exports.findAll = (req, res) => {
 
 exports.update = (req, res) => {
   Movimiento.findByIdAndUpdate(req.params.id, req.body)
-    .populate("TipoMovimiento")
-    .populate("Persona")
-    .populate("Pago")
+    .populate("tipoMovimiento")
+    .populate("persona")
+    .populate("pago")
     .exec((err, data) => {
       if (err) {
         console.log(err);
