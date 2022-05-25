@@ -56,7 +56,7 @@ import { RouterLink, RouterView } from "vue-router";
             <div class="menu-wrap">
               <nav class="menu-nav show">
                 <div class="logo">
-                  <a href="#"><img src="img/logo/logo.png" alt="" /></a>
+                  <a href="/"><img src="./assets/image 1.png" alt="" /></a>
                 </div>
                 <div class="navbar-wrap main-menu d-none d-lg-flex">
                   <ul class="navigation">
@@ -69,13 +69,10 @@ import { RouterLink, RouterView } from "vue-router";
                     <li :class="isAdopcion">
                       <a href="/adopcion">Lista de Adopcion</a>
                     </li>
-                    <li class="menu-item-has-children">
-                      <a href="#">Blog</a>
-                      <ul class="submenu">
-                        <li><a href="#">Nuestro Blog</a></li>
-                      </ul>
+                    <li :class="isBlog">
+                      <a href="/blog">Blog</a>                      
                     </li>
-                    <li><a href="#">Contacto</a></li>
+                    <li :class="isContacto"><a href="/contacto">Contacto</a></li>
                   </ul>
                 </div>
                 <div class="header-action d-none d-md-block">
@@ -113,8 +110,8 @@ import { RouterLink, RouterView } from "vue-router";
                             <span class="f-left">Total:</span>
                             <span class="f-right">$229.9</span>
                           </div>
-                        </li>
-                        <li>
+                        </li>                        
+                        <li>                          
                           <div class="checkout-link">
                             <a href="#">Pagar</a>
                             <a class="black-color" href="#">Cancelar</a>
@@ -124,7 +121,7 @@ import { RouterLink, RouterView } from "vue-router";
                     </li>
                     <li class="header-btn">
                       <a href="#" class="btn"
-                        >Adopta aqui <svg-icon type="mdi" :path="paw"></svg-icon
+                        >Dona aqui <svg-icon type="mdi" :path="paw"></svg-icon
                       ></a>
                     </li>
                   </ul>
@@ -220,29 +217,28 @@ import { RouterLink, RouterView } from "vue-router";
             <div class="footer-widget">
               <div class="f-logo">
                 <a
-                  href="https://themebeyond.com/pre/petco-prev/petco-live/index.html"
+                  href="/"
                   ><img
-                    src="./Petco - Pet Breeder &amp; Adoption HTML Template_files/logo.png"
+                    src="./assets/image 1.png"
                     alt=""
                 /></a>
               </div>
               <div class="footer-text">
                 <p>
-                  The best overall dog DNA test Embark Breed &amp; Health Kit
-                  (view at Chewy) which provides overall dog you.
+                  Colitas Felices al servicio de la comunidad.
                 </p>
               </div>
               <div class="footer-contact">
-                <div class="icon"><i class="fas fa-headphones"></i></div>
+                <div class="icon"><svg-icon type="mdi" width="20" :path="phone" /></div>
                 <div class="content">
                   <h4 class="title">
                     <a href="tel:0987654321">747-800-9880</a>
                   </h4>
-                  <span>Call Now</span>
+                  <span>Llama ahora</span>
                 </div>
               </div>
               <div class="footer-social">
-                <ul>
+                <!-- <ul>
                   <li>
                     <a
                       href="https://themebeyond.com/pre/petco-prev/petco-live/dog-list.html#"
@@ -267,108 +263,48 @@ import { RouterLink, RouterView } from "vue-router";
                       ><i class="fab fa-linkedin-in"></i
                     ></a>
                   </li>
+                </ul> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="footer-widget">
+              <h4 class="fw-title">Políticas</h4>
+              <div class="fw-link">
+                <ul>
+                  <li>
+                    <a
+                      href="/privacidad"
+                      >De privacidad</a
+                    >
+                  </li>                                    
                 </ul>
               </div>
             </div>
           </div>
           <div class="col-2">
             <div class="footer-widget">
-              <h4 class="fw-title">Our Policies</h4>
+              <h4 class="fw-title">Servicios</h4>
               <div class="fw-link">
                 <ul>
                   <li>
                     <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/contact.html"
-                      >Privacy Policy</a
+                      href="/tienda"
+                      >Tienda</a
                     >
                   </li>
                   <li>
                     <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/contact.html"
-                      >Terms and Conditions</a
+                      href="/adopcion"
+                      >Adopción</a
                     >
                   </li>
                   <li>
                     <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/contact.html"
-                      >Editorial Policy</a
+                      href="/donacion"
+                      >Donación</a
                     >
-                  </li>
-                  <li>
-                    <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/contact.html"
-                      >Return Policy</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/contact.html"
-                      >IP Policy</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/contact.html"
-                      >Grievance Redressal Policy</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/contact.html"
-                      >Terms and Conditions</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-2">
-            <div class="footer-widget">
-              <h4 class="fw-title">Our Services</h4>
-              <div class="fw-link">
-                <ul>
-                  <li>
-                    <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/breeder.html"
-                      >Our Breeder</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/adoption.html"
-                      >Our Adoption</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/contact.html"
-                      >Editorial Policy</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/contact.html"
-                      >Return Policy</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/contact.html"
-                      >Grievance Policy</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/contact.html"
-                      >Redressal Policy</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/contact.html"
-                      >Contact Us</a
-                    >
-                  </li>
+                  </li>                 
                 </ul>
               </div>
             </div>
@@ -475,6 +411,7 @@ import {
   mdiCart,
   mdiPaw,
   mdiTwitter,
+  mdiPhone
 } from "@mdi/js";
 
 export default {
@@ -493,6 +430,7 @@ export default {
       cart: mdiCart,
       paw: mdiPaw,
       route: "a",
+      phone: mdiPhone
     };
   },
   computed: {
@@ -507,7 +445,13 @@ export default {
       return { active: this.$route.name === "home" };
     },
      isTienda: function () {
-      return { active: this.$route.name === "tienda" };
+      return { active: this.$route.name === "tienda" || this.$route.name.includes("tiendaDetalle")};
+    },
+     isBlog: function () {
+      return { active: this.$route.name === "blog" || this.$route.name.includes("blogDetalle")};
+    },
+    isContacto: function () {
+      return { active: this.$route.name === "contacto"};
     },
   },
 };

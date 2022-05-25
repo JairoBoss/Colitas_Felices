@@ -33,7 +33,7 @@
                       ><svg-icon type="mdi" :path="cat"></svg-icon> Encuentra tu
                       gato</a
                     >
-                  </li>
+                  </li>                  
                 </ul>
               </div>
             </div>
@@ -132,7 +132,7 @@
   <!-- adoption-area-end -->
 
   <!-- breeds-services -->
-  <section class="breeds-services pt-110 pb-110">
+  <!-- <section class="breeds-services pt-110 pb-110">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-xl-7 col-lg-9">
@@ -215,7 +215,7 @@
       <img src="img/images/breed_services_shape02.png" alt="" />
     </div>
   </section>
-  <!-- breeds-services-end -->
+  breeds-services-end -->
 
   <!-- faq-area -->
   <section class="faq-area faq-bg">
@@ -332,8 +332,8 @@
   </section>
   <!-- faq-area-end -->
 
-  <!-- brand-area -->
-  <div class="brand-area pt-80 pb-80">
+  
+  <!-- <div class="brand-area pt-80 pb-80">
     <div class="container">
       <div class="row brand-active">
         <div class="col-12">
@@ -373,10 +373,8 @@
         </div>
       </div>
     </div>
-  </div>
-  <!-- brand-area-end -->
-
-  <!-- adoption-shop-area -->
+  </div> -->
+<!--  
   <section class="adoption-shop-area">
     <div class="container">
       <div class="row justify-content-center">
@@ -466,11 +464,11 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- adoption-shop-area-end -->
 
   <!-- testimonial-area -->
-  <section class="testimonial-area testimonial-bg">
+  <!-- <section class="testimonial-area testimonial-bg">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-xl-7 col-lg-9">
@@ -524,11 +522,11 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- testimonial-area-end -->
 
   <!-- blog-area -->
-  <section class="blog-area pt-110 pb-60">
+  <!-- <section class="blog-area pt-110 pb-60">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-xl-7 col-lg-9">
@@ -632,11 +630,11 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- blog-area-end -->
 
   <!-- newsletter-area -->
-  <div class="newsletter-area pb-110">
+  <!-- <div class="newsletter-area pb-110">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -661,7 +659,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script>

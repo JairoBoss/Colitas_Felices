@@ -115,7 +115,6 @@ export default {
 };
 </script>
 
-
 <style>
 .breadcrumb-bg{
   background-image: url("https://themebeyond.com/pre/petco-prev/petco-live/img/bg/breadcrumb_bg.jpg");

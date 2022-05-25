@@ -3,22 +3,20 @@
   <section
     class="breadcrumb-area breadcrumb-bg"
     data-background="img/bg/breadcrumb_bg.jpg"
-    style="background-image: url('img/bg/breadcrumb_bg.jpg')"
   >
     <div class="container">
       <div class="row">
         <div class="col-12">
           <div class="breadcrumb-content">
-            <h2 class="title">Our Shop</h2>
+            <h2 class="title">Tienda</h2>
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                  <a
-                    href="https://themebeyond.com/pre/petco-prev/petco-live/index.html"
-                    >Home</a
-                  >
+                  <a href="/">Inicio</a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page">Shop</li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  Tienda
+                </li>
               </ol>
             </nav>
           </div>
@@ -39,93 +37,29 @@
                 <form
                   action="https://themebeyond.com/pre/petco-prev/petco-live/shop.html#"
                 >
-                  <input type="text" placeholder="Search ..." />
-                  <button type="submit"><i class="fa fa-search"></i></button>
+                  <input type="text" placeholder="Buscar.." />
+                  <button type="submit">
+                    <svg-icon type="mdi" :path="magnify"></svg-icon>
+                  </button>
                 </form>
               </div>
             </div>
             <div class="widget">
-              <h4 class="sidebar-title">Category</h4>
+              <h4 class="sidebar-title">Categoría</h4>
               <div class="shop-cat-list">
                 <ul>
-                  <li>
+                  <li v-for="categoria in categorias" key="{{index}}">
                     <a
                       href="https://themebeyond.com/pre/petco-prev/petco-live/shop.html"
-                      >Squeaky <span>+</span></a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/shop.html"
-                      >Dog Food <span>+</span></a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/shop.html"
-                      >Dog-Kit <span>+</span></a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/shop.html"
-                      >Dog Home <span>+</span></a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/shop.html"
-                      >Safety-Suits <span>+</span></a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/shop.html"
-                      >Pet Protect <span>+</span></a
+                      >{{ categoria }} <span>+</span></a
                     >
                   </li>
                 </ul>
               </div>
             </div>
+            <div class="widget"></div>
             <div class="widget">
-              <h4 class="sidebar-title">Top Brand</h4>
-              <div class="shop-brand-list">
-                <ul>
-                  <li>
-                    <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/shop.html"
-                      >Geco</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/shop.html"
-                      >Carnation</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/shop.html"
-                      >Suppke</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/shop.html"
-                      >WeBeyond</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/shop.html"
-                      >Edstudy</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="widget">
-              <h4 class="sidebar-title">Filter by Price</h4>
+              <h4 class="sidebar-title">Filtrar por precio</h4>
               <div class="price_filter">
                 <div
                   id="slider-range"
@@ -147,7 +81,7 @@
                   ></span>
                 </div>
                 <div class="price_slider_amount">
-                  <span>Price :</span>
+                  <span>Precio :</span>
                   <input
                     type="text"
                     id="amount"
@@ -170,29 +104,13 @@
         </div>
         <div class="col-lg-9">
           <div class="shop-wrap">
-            <h4 class="title">Shop</h4>
+            <h4 class="title">Tienda</h4>
             <div class="shop-page-meta mb-30">
-              <div class="shop-grid-menu">
-                <ul>
-                  <li class="active">
-                    <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/shop.html#"
-                      ><i class="fas fa-th"></i
-                    ></a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/shop.html#"
-                      ><i class="fas fa-list"></i
-                    ></a>
-                  </li>
-                </ul>
-              </div>
               <div class="shop-showing-result">
-                <p>Total Items 1-12 of 13</p>
+                <p>Items totales 10 - 12</p>
               </div>
               <div class="shop-show-list">
-                <form
+                <!-- <form
                   action="https://themebeyond.com/pre/petco-prev/petco-live/shop.html#"
                 >
                   <label for="show">Show</label>
@@ -213,13 +131,13 @@
                       <li data-value="" class="option">20</li>
                     </ul>
                   </div>
-                </form>
+                </form> -->
               </div>
               <div class="shop-short-by">
-                <form
+                <!-- <form
                   action="https://themebeyond.com/pre/petco-prev/petco-live/shop.html#"
                 >
-                  <label for="shortBy">Sort By</label>
+                  <label for="shortBy">Filtrar por</label>
                   <select id="shortBy" class="selected" style="display: none">
                     <option value="">Sort by latest</option>
                     <option value="">Low to high</option>
@@ -237,282 +155,39 @@
                       <li data-value="" class="option">Popularity</li>
                     </ul>
                   </div>
-                </form>
+                </form> -->
               </div>
             </div>
             <div class="row justify-content-center">
-              <div class="col-lg-4 col-sm-6">
+              <div class="col-lg-4 col-sm-6" v-for="producto in productos">
                 <div class="shop-item mb-55">
                   <div class="shop-thumb">
-                    <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/shop-details.html"
-                      ><img
-                        src="./Petco - Pet Breeder &amp; Adoption HTML Template_files/shop_item01.jpg"
-                        alt=""
+                    <a :href="'/tiendaDetalle' + producto.id"
+                      ><img :src="producto.foto" alt=""
                     /></a>
                   </div>
                   <div class="shop-content">
-                    <span>Dog toy’s</span>
+                    <span>{{ producto.categoria }}</span>
                     <h4 class="title">
-                      <a
-                        href="https://themebeyond.com/pre/petco-prev/petco-live/shop-details.html"
-                        >Pet Knit Knacks</a
-                      >
+                      <a 
+                      :href="'/tiendaoDetalle' + producto.id">{{
+                        producto.nombre
+                      }}</a>
                     </h4>
                     <div class="shop-content-bottom">
-                      <span class="price">$28.00</span>
+                      <span class="price">${{ producto.precio }}</span>
                       <span class="add-cart"
                         ><a
-                          href="https://themebeyond.com/pre/petco-prev/petco-live/shop-details.html"
-                          >ADD +</a
+                          :href="'/tiendaDetalle'+producto.id"
+                          >Añadir +</a
                         ></span
                       >
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-4 col-sm-6">
-                <div class="shop-item mb-55">
-                  <div class="shop-thumb">
-                    <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/shop-details.html"
-                      ><img
-                        src="./Petco - Pet Breeder &amp; Adoption HTML Template_files/shop_item02.jpg"
-                        alt=""
-                    /></a>
-                  </div>
-                  <div class="shop-content">
-                    <span>Dog toy’s</span>
-                    <h4 class="title">
-                      <a
-                        href="https://themebeyond.com/pre/petco-prev/petco-live/shop-details.html"
-                        >Squeaky Dog</a
-                      >
-                    </h4>
-                    <div class="shop-content-bottom">
-                      <span class="price">$19.00</span>
-                      <span class="add-cart"
-                        ><a
-                          href="https://themebeyond.com/pre/petco-prev/petco-live/shop-details.html"
-                          >ADD +</a
-                        ></span
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-sm-6">
-                <div class="shop-item mb-55">
-                  <div class="shop-thumb">
-                    <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/shop-details.html"
-                      ><img
-                        src="./Petco - Pet Breeder &amp; Adoption HTML Template_files/shop_item03.jpg"
-                        alt=""
-                    /></a>
-                  </div>
-                  <div class="shop-content">
-                    <span>Dog toy’s</span>
-                    <h4 class="title">
-                      <a
-                        href="https://themebeyond.com/pre/petco-prev/petco-live/shop-details.html"
-                        >Pet Knit Knacks</a
-                      >
-                    </h4>
-                    <div class="shop-content-bottom">
-                      <span class="price">$29.00</span>
-                      <span class="add-cart"
-                        ><a
-                          href="https://themebeyond.com/pre/petco-prev/petco-live/shop-details.html"
-                          >ADD +</a
-                        ></span
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-sm-6">
-                <div class="shop-item mb-55">
-                  <div class="shop-thumb">
-                    <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/shop-details.html"
-                      ><img
-                        src="./Petco - Pet Breeder &amp; Adoption HTML Template_files/shop_item04.jpg"
-                        alt=""
-                    /></a>
-                  </div>
-                  <div class="shop-content">
-                    <span>Dog toy’s</span>
-                    <h4 class="title">
-                      <a
-                        href="https://themebeyond.com/pre/petco-prev/petco-live/shop-details.html"
-                        >Yoda Carriage</a
-                      >
-                    </h4>
-                    <div class="shop-content-bottom">
-                      <span class="price">$49.00</span>
-                      <span class="add-cart"
-                        ><a
-                          href="https://themebeyond.com/pre/petco-prev/petco-live/shop-details.html"
-                          >ADD +</a
-                        ></span
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-sm-6">
-                <div class="shop-item mb-55">
-                  <div class="shop-thumb">
-                    <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/shop-details.html"
-                      ><img
-                        src="./Petco - Pet Breeder &amp; Adoption HTML Template_files/shop_item05.jpg"
-                        alt=""
-                    /></a>
-                  </div>
-                  <div class="shop-content">
-                    <span>Dog toy’s</span>
-                    <h4 class="title">
-                      <a
-                        href="https://themebeyond.com/pre/petco-prev/petco-live/shop-details.html"
-                        >Pet Carriage</a
-                      >
-                    </h4>
-                    <div class="shop-content-bottom">
-                      <span class="price">$09.00</span>
-                      <span class="add-cart"
-                        ><a
-                          href="https://themebeyond.com/pre/petco-prev/petco-live/shop-details.html"
-                          >ADD +</a
-                        ></span
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-sm-6">
-                <div class="shop-item mb-55">
-                  <div class="shop-thumb">
-                    <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/shop-details.html"
-                      ><img
-                        src="./Petco - Pet Breeder &amp; Adoption HTML Template_files/shop_item06.jpg"
-                        alt=""
-                    /></a>
-                  </div>
-                  <div class="shop-content">
-                    <span>Dog toy’s</span>
-                    <h4 class="title">
-                      <a
-                        href="https://themebeyond.com/pre/petco-prev/petco-live/shop-details.html"
-                        >Squeaky Dog</a
-                      >
-                    </h4>
-                    <div class="shop-content-bottom">
-                      <span class="price">$16.00</span>
-                      <span class="add-cart"
-                        ><a
-                          href="https://themebeyond.com/pre/petco-prev/petco-live/shop-details.html"
-                          >ADD +</a
-                        ></span
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-sm-6">
-                <div class="shop-item mb-55">
-                  <div class="shop-thumb">
-                    <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/shop-details.html"
-                      ><img
-                        src="./Petco - Pet Breeder &amp; Adoption HTML Template_files/shop_item07.jpg"
-                        alt=""
-                    /></a>
-                  </div>
-                  <div class="shop-content">
-                    <span>Dog toy’s</span>
-                    <h4 class="title">
-                      <a
-                        href="https://themebeyond.com/pre/petco-prev/petco-live/shop-details.html"
-                        >Carriage Dog</a
-                      >
-                    </h4>
-                    <div class="shop-content-bottom">
-                      <span class="price">$18.00</span>
-                      <span class="add-cart"
-                        ><a
-                          href="https://themebeyond.com/pre/petco-prev/petco-live/shop-details.html"
-                          >ADD +</a
-                        ></span
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-sm-6">
-                <div class="shop-item mb-55">
-                  <div class="shop-thumb">
-                    <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/shop-details.html"
-                      ><img
-                        src="./Petco - Pet Breeder &amp; Adoption HTML Template_files/shop_item08.jpg"
-                        alt=""
-                    /></a>
-                  </div>
-                  <div class="shop-content">
-                    <span>Dog toy’s</span>
-                    <h4 class="title">
-                      <a
-                        href="https://themebeyond.com/pre/petco-prev/petco-live/shop-details.html"
-                        >Yoda Carriage</a
-                      >
-                    </h4>
-                    <div class="shop-content-bottom">
-                      <span class="price">$12.00</span>
-                      <span class="add-cart"
-                        ><a
-                          href="https://themebeyond.com/pre/petco-prev/petco-live/shop-details.html"
-                          >ADD +</a
-                        ></span
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-sm-6">
-                <div class="shop-item mb-55">
-                  <div class="shop-thumb">
-                    <a
-                      href="https://themebeyond.com/pre/petco-prev/petco-live/shop-details.html"
-                      ><img
-                        src="./Petco - Pet Breeder &amp; Adoption HTML Template_files/shop_item09.jpg"
-                        alt=""
-                    /></a>
-                  </div>
-                  <div class="shop-content">
-                    <span>Dog toy’s</span>
-                    <h4 class="title">
-                      <a
-                        href="https://themebeyond.com/pre/petco-prev/petco-live/shop-details.html"
-                        >Pet Knit Knacks</a
-                      >
-                    </h4>
-                    <div class="shop-content-bottom">
-                      <span class="price">$32.00</span>
-                      <span class="add-cart"
-                        ><a
-                          href="https://themebeyond.com/pre/petco-prev/petco-live/shop-details.html"
-                          >ADD +</a
-                        ></span
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="shop-page-meta">
+              <!-- </div> -->
+              <!-- <div class="shop-page-meta">
               <div class="shop-grid-menu">
                 <ul>
                   <li class="active">
@@ -581,7 +256,7 @@
                     ></a>
                   </li>
                 </ul>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -589,3 +264,71 @@
     </div>
   </div>
 </template>
+
+<script>
+import SvgIcon from "@jamescoyle/vue-icon";
+import { mdiMagnify } from "@mdi/js";
+
+export default {
+  name: "Tienda",
+  components: {
+    SvgIcon,
+  },
+  data() {
+    return {
+      categorias: ["Comida", "Juguetes", "Correas"],
+      productos: [
+        {
+          id: 1,
+          nombre: "Juguete",
+          precio: 200,
+          foto: "https://themebeyond.com/pre/petco-prev/petco-live/img/product/shop_item01.jpg",
+          categoria: "Juguetes",
+        },
+        {
+          id: 2,
+          nombre: "Juguete",
+          precio: 200,
+          foto: "https://themebeyond.com/pre/petco-prev/petco-live/img/product/shop_item01.jpg",
+          categoria: "Juguetes",
+        },
+        {
+          id: 3,
+          nombre: "Juguete",
+          precio: 200,
+          foto: "https://themebeyond.com/pre/petco-prev/petco-live/img/product/shop_item01.jpg",
+          categoria: "Juguetes",
+        },
+        {
+          id: 4,
+          nombre: "Juguete",
+          precio: 200,
+          foto: "https://themebeyond.com/pre/petco-prev/petco-live/img/product/shop_item01.jpg",
+          categoria: "Juguetes",
+        },
+        {
+          id: 5,
+          nombre: "Juguete",
+          precio: 200,
+          foto: "https://themebeyond.com/pre/petco-prev/petco-live/img/product/shop_item01.jpg",
+          categoria: "Juguetes",
+        },
+        {
+          id: 6,
+          nombre: "Juguete",
+          precio: 200,
+          foto: "https://themebeyond.com/pre/petco-prev/petco-live/img/product/shop_item01.jpg",
+          categoria: "Juguetes",
+        },
+      ],
+      magnify: mdiMagnify,
+    };
+  },
+};
+</script>
+
+<style>
+.breadcrumb-bg {
+  background-image: url("https://themebeyond.com/pre/petco-prev/petco-live/img/bg/breadcrumb_bg.jpg");
+}
+</style>
