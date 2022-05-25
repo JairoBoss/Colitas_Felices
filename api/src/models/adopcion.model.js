@@ -7,15 +7,15 @@ const AdopcionSchema = new Schema({
   status: {
     type: Boolean
   },
-  Mascotas: {
+  Mascota: {
     type: Schema.Types.ObjectId,
     required: true,
-    ref: 'Mascotas'
+    ref: 'Mascota'
   },
-  Personas: {
+  Persona: {
     type: Schema.Types.ObjectId,
     required: true,
-    ref: 'Personas'
+    ref: 'Persona'
   }
 });
 

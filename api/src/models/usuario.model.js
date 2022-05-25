@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const UsuarioSchema = new Schema({
-  email: {
+  correo: {
     type: String,
     required: true
   },
@@ -9,10 +9,10 @@ const UsuarioSchema = new Schema({
     type: String,
     required: true
   },
-  Personas: {
+  Persona: {
     type: Schema.Types.ObjectId,
     required: true,
-    ref: 'Personas'
+    ref: 'Persona'
   }
 });
 

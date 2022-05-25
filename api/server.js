@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const db = require("./src/models");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -32,6 +33,25 @@ app.use((req, res, next) => {
 app.get("/", (req, res) => {
   res.json({ message: "api work" });
 });
+
+db.mongoose
+  .connect(db.url, {
+    useNewUrlParser: true,
+  })
+  .then(() => {
+    console.log("Conectado a la base de datos!");
+  })
+  .catch((err) => {
+    console.log(
+      `Ocurrio un error al tratar de conectarlo a la base de datos! ${err}`
+    );
+    process.exit();
+  });
+
+require("./src/routes/persona.routes.js")(app);
+require("./src/routes/usuario.routes.js")(app);
+require("./src/routes/mascota.routes.js")(app);
+require("./src/routes/adopcion.routes.js")(app);
 
 app.listen(PORT, () => {
   console.log(`Server en el puerto ${PORT}`);
