@@ -60,6 +60,7 @@ require("./src/routes/noticia.routes.js")(app);
 require("./src/routes/pago.routes.js")(app);
 require("./src/routes/tipoMovimiento.routes.js")(app);
 require("./src/routes/venta.routes.js")(app);
+require("./src/routes/s3.routes.js")(app);
 
 app.listen(PORT, () => {
   console.log(`Server en el puerto ${PORT}`);
