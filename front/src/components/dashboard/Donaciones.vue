@@ -1,0 +1,3 @@
+<template>
+Donación Dash
+</template>

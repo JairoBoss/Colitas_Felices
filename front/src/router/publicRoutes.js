@@ -4,6 +4,7 @@ import Adopcion from "../components/Adopcion.vue"
 import AdopcionItem from "../components/AdopcionItem.vue"
 import TiendaDetalle from "../components/TiendaDetalle.vue"
 import BlogDetalle from "../components/BlogDetalle.vue"
+import AgregarAdopcion from "../components/dashboard/AgregarAdopcion.vue"
 
 const publicRouter = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -46,7 +47,38 @@ const publicRouter = createRouter({
       path: '/contacto',
       name: 'contacto',
       component: () => import("../components/Contacto.vue")
+    },
+    {
+      path: '/adopcionDash',
+      name: 'adopcionDash',
+      component: () => import("../components/dashboard/Adopcion.vue")
+    },
+    {
+      path: '/blogDash',
+      name: 'blogDash',
+      component: () => import("../components/dashboard/Blog.vue")
+    },
+    {
+      path: '/donacionDash',
+      name: 'donacionDash',
+      component: () => import("../components/dashboard/Donaciones.vue")
+    },
+    {
+      path: '/mascotaDash',
+      name: 'mascotaDash',
+      component: () => import("../components/dashboard/Mascotas.vue")
+    },
+    {
+      path: '/productoDash',
+      name: 'productoDash',
+      component: () => import("../components/dashboard/Productos.vue")
+    },
+    {
+      path: '/agregarAdopcion',
+      name: 'agregarAdopcion',
+      component: AgregarAdopcion
     }
+    
 
   ]
 })
