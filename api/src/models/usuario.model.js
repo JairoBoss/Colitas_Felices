@@ -9,7 +9,7 @@ const UsuarioSchema = new Schema({
     type: String,
     required: true
   },
-  persona: {
+  Persona: {
     type: Schema.Types.ObjectId,
     required: true,
     ref: 'Persona'

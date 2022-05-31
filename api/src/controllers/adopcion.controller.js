@@ -4,8 +4,8 @@ exports.create = (req, res) => {
   const adopcionNueva = new Adopcion({
     fechaAdopcion: req.body.fechaAdopcion,
     status: req.body.status,
-    mascota: req.body.mascota,
-    persona: req.body.persona,
+    Mascota: req.body.mascota,
+    Persona: req.body.persona,
   });
 
   adopcionNueva.save((err, adopcionNueva) => {
@@ -18,8 +18,8 @@ exports.create = (req, res) => {
       });
     } else {
       Adopcion.findById(adopcionNueva._id)
-        .populate("mascota")
-        .populate("persona")
+        .populate("Mascota")
+        .populate("Persona")
         .exec((err, adopcionNueva) => {
           if (err) {
             console.log(err);
@@ -38,8 +38,8 @@ exports.create = (req, res) => {
 
 exports.findOne = (req, res) => {
   Adopcion.findById(req.params.id)
-    .populate("mascota")
-    .populate("persona")
+    .populate("Mascota")
+    .populate("Persona")
     .exec((err, data) => {
       if (err) {
         console.log(err);
@@ -56,8 +56,8 @@ exports.findOne = (req, res) => {
 
 exports.findAll = (req, res) => {
   Adopcion.find()
-    .populate("mascota")
-    .populate("persona")
+    .populate("Mascota")
+    .populate("Persona")
     .exec((err, data) => {
       if (err) {
         console.log(err);
@@ -74,8 +74,8 @@ exports.findAll = (req, res) => {
 
 exports.update = (req, res) => {
   Adopcion.findByIdAndUpdate(req.params.id, req.body)
-    .populate("mascota")
-    .populate("persona")
+    .populate("Mascota")
+    .populate("Persona")
     .exec((err, data) => {
       if (err) {
         console.log(err);

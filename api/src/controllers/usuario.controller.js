@@ -17,7 +17,7 @@ exports.create = async (req, res) => {
   const usuarioNuevo = new Usuario({
     correo: req.body.correo,
     contraseña: hasPassword,
-    persona: req.body.persona,
+    Persona: req.body.persona,
   });
 
   usuarioNuevo.save((err, usuarioNuevo) => {
@@ -42,7 +42,7 @@ exports.create = async (req, res) => {
 
 exports.login = async (req, res) => {
   Usuario.findOne({ correo: req.body.correo })
-    .populate("persona")
+    .populate("Persona")
     .exec((err, user) => {
       if (err) {
         res.status(500).send({
@@ -51,6 +51,7 @@ exports.login = async (req, res) => {
         });
       } else {
         if (user) {
+          console.log(user)
           const validPass = bcrypt
             .compare(req.body.contraseña, user.contraseña)
             .then((data) => {
@@ -59,7 +60,7 @@ exports.login = async (req, res) => {
               } else {
                 let payload = { id: user._id, user_type_id: user.user_type_id };
                 const token = jwt.sign(payload, process.env.TOKEN_SECRET);
-
+                
                 res
                   .status(200)
                   .header("auth-token", token)
